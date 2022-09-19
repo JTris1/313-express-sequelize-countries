@@ -10,6 +10,12 @@ Country.init({
     },
     cca3_code: {
         type: DataTypes.STRING
+    },
+    capital: {
+        type: DataTypes.STRING
+    },
+    continent: {
+        type: DataTypes.STRING
     }
 }, {
     sequelize,

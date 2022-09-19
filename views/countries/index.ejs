@@ -8,7 +8,12 @@
     <h1><%= title %></h1>
     <ul id="countries">
         <% countryList.forEach( (country) => { %>
-            <li><%= country.name %> (<%= country.cca3_code %>)</li>
+            <li>
+              <a href="/countries/<%= country.id %>">
+                <%= country.name %>
+              </a>
+              (<%= country.cca3_code %>)
+            </li>
         <% }); %>
     </ul>
   </body>
