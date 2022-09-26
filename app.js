@@ -5,6 +5,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+// db_associations exports a function, requires trailing parentheses to indicate it's function
+const db_associations = require('services/db_associations')();
+
 const indexRouter = require('./routes/index');
 const countriesRouter = require('./routes/countries');
 const { ppid } = require('process');

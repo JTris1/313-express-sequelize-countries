@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Country = require('models/Country');
+const Language = require('models/Language');
 
 // GET homepage of the countries route
     // root of 'countries' router
@@ -18,8 +19,11 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const requestedId = req.params.id; // 'req.params.id' alligns with ':id' placeholder
     const country = await Country.findOne({
-        where: { id: requestedId } // "id: requestedId" is an object because you can specify multiple WHERE clauses
+        where: { id: requestedId }, // "id: requestedId" is an object because you can specify multiple WHERE clauses
+        include: [{model: Language, as: 'languages'}] // Creates the ability to do 'country.languages' like you would with 'country.title' for example
     });
+
+    console.log(country.languages);
 
     // View to render
     res.render('countries/detail', {

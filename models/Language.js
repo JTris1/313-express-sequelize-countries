@@ -1,21 +1,21 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('services/database');
 
-class Country extends Model {}
+class Language extends Model {}
 
 // Initialize the table connected to the attributes
-Country.init({
-    name: {
+Language.init({
+    iso6393_code: {
         type: DataTypes.STRING
     },
-    cca3_code: {
+    language: {
         type: DataTypes.STRING
     }
 }, {
     sequelize,
-    tableName: 'countries', // THIS IS THE NAME OF THE TABLE IN THE DATABASE
-    modelName: 'countries',
+    tableName: 'language', // THIS IS THE NAME OF THE TABLE IN THE DATABASE
+    modelName: 'language',
     timestamps: false       // Ignores CREATEDAT/UPDATEDAT
 });
 
-module.exports = Country;
+module.exports = Language;
