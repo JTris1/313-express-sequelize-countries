@@ -13,8 +13,8 @@ Language.init({
     }
 }, {
     sequelize,
-    tableName: 'language', // THIS IS THE NAME OF THE TABLE IN THE DATABASE
-    modelName: 'language',
+    tableName: 'languages', // THIS IS THE NAME OF THE TABLE IN THE DATABASE
+    modelName: 'languages',
     timestamps: false       // Ignores CREATEDAT/UPDATEDAT
 });
 

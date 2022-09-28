@@ -9,8 +9,8 @@
     <h3>CCA3 Code:</h3>
     <%= countryItem.cca3_code %>
     <h2>Languages</h2>
-    <% countryItem.languages.foreach( (lang) => {
+    <% countryItem.languages.forEach( (lang) => { %>
       <li><%= lang.language %> (<%= lang.iso6393_code %>)</li>
-    })
+    <% }) %>
   </body>
 </html>
